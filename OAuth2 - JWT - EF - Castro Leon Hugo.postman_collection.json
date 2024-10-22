@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "4ab57c14-edc0-4fe0-ab55-0577c8344779",
+		"name": "OAuth2 - JWT - EF - Castro Leon Hugo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35956105"
+	},
+	"item": [
+		{
+			"name": "Autenticacion",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "client",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "codigo",
+							"value": "i202210397",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "054",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:9000/oauth2/token",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Autorizacion publica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/api/v1/reservas/espacio-libre",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"v1",
+						"reservas",
+						"espacio-libre"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Autorizacion privadas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiI3ODVjNWE2Zi05ODliLTRmMzEtODMwZC02MWVkMjhlMjM5ZDkiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjbGllbnQiLCJhdWQiOiJjbGllbnQiLCJuYmYiOjE3Mjk1NzU3MjgsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6OTAwMCIsImV4cCI6MTcyOTU3NzUyOCwiaWF0IjoxNzI5NTc1NzI4LCJqdGkiOiJlNjBhOTc4OS02ZDIwLTQyNWItYTg1MC0xYTBkY2Y4NzE5YjkifQ.KrU80ycWlI1RHzLhsVqL-n-eKBF7s7k-2VyNUxjzQ7ydmwdYdRfqj-U5iYo6vaEsh37-zm6dPRCwBr_8Zn9nLDsd2kK5wDYexq8W6AaNdgozWExs-KboLR9vqJWIuoaVR9d7hADpiHVjLVy2p9tin0ZXO_2dFp4jIMrbatzpaa6E9eYHpi0ynXTH1FHa5WMCWggHmsAbRJyvAj7U3fkCrplxvkK83zVtr8ZiEptS3r8NljRMIEkN4W-rRjPJykB_ddozAiRCwMLPJWPXoXcj8jL5Dazgswrvor6uazo7CBaIjJBpRq3Ym8woyOhfEA7_uA5oqEb6bJi2RQH8nqEH_w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "codigo",
+							"value": "i202210397",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "054",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8082/api/v1/reservas/reservas-generadas",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"v1",
+						"reservas",
+						"reservas-generadas"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
